@@ -1,5 +1,6 @@
 import Foundation
 
+// MARK: - Maze Factories
 class MazeFactory {
     func makeMaze() -> Maze {
         return Maze()
@@ -35,5 +36,40 @@ class BombedMazeFactory: MazeFactory {
 
     override func makeRoom(_ roomNo: Int) -> Room {
         return RoomWithABomb(roomNo)
+    }
+}
+
+// MARK: - Widget Factories
+class WidgetFactory {
+    func createApplication() -> Application {
+        return Application()
+    }
+    
+    func createScrollBar() -> ScrollBar {
+        return ScrollBar()
+    }
+    
+    func createWindow(scrollBar: ScrollBar) -> Window {
+        return Window(scrollBar: scrollBar)
+    }
+}
+
+class LightWidgetFactory: WidgetFactory {
+    override func createScrollBar() -> ScrollBar {
+        return LightScrollBar()
+    }
+    
+    override func createWindow(scrollBar: ScrollBar) -> Window {
+        return LightWindow(scrollBar: scrollBar)
+    }
+}
+
+class DarkWidgetFactory: WidgetFactory {
+    override func createScrollBar() -> ScrollBar {
+        return DarkScrollBar()
+    }
+    
+    override func createWindow(scrollBar: ScrollBar) -> Window {
+        return DarkWindow(scrollBar: scrollBar)
     }
 }

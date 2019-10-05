@@ -1,5 +1,6 @@
 import Foundation
 
+// MARK: - Maze Client
 class MazeGame {
     public static func createMaze(with factory: MazeFactory) -> Maze {
         let maze = factory.makeMaze()
@@ -21,5 +22,16 @@ class MazeGame {
         room2.setSide(direction: .west, site: door)
 
         return maze
+    }
+}
+
+// MARK: - Widget Client
+class ThemeManager {
+    public static func initApplication(with factory: WidgetFactory) -> Application {
+        let application = factory.createApplication()
+        let scrollBar = factory.createScrollBar()
+        let window = factory.createWindow(scrollBar: scrollBar)
+        application.add(window)
+        return application
     }
 }

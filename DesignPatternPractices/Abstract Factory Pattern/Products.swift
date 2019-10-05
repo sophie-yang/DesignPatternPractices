@@ -1,11 +1,11 @@
 import Foundation
 
-// MARK: - MapSite
+// MARK: - Maze Products
 protocol MapSite {
     func enter()
 }
 
-// MARK: - Walls
+// MARK: Walls
 class Wall: MapSite {
     func enter() {
         print(failureMessage)
@@ -14,7 +14,7 @@ class Wall: MapSite {
 
 class BombedWall: Wall { }
 
-// MARK: - Rooms
+// MARK: Rooms
 class Room: MapSite {
     let roomNo: Int
     var sides = [Direction: MapSite]()
@@ -50,7 +50,7 @@ class EnchantedRoom: Room {
 
 class RoomWithABomb: Room { }
 
-// MARK: - Doors
+// MARK: Doors
 class Door: MapSite {
     let room1: Room
     let room2: Room
@@ -72,7 +72,7 @@ class Door: MapSite {
 
 class DoorNeedingSpell: Door { }
 
-// MARK: - Maze
+// MARK: Maze
 class Maze {
     var rooms = [Room]()
 
@@ -95,3 +95,26 @@ enum Direction {
 // swiftlint:disable private_over_fileprivate
 fileprivate let successMessage = "Location changed."
 fileprivate let failureMessage = "Bump!"
+
+// MARK: - Widget Products
+class ScrollBar { }
+class LightScrollBar: ScrollBar { }
+class DarkScrollBar: ScrollBar { }
+
+class Window {
+    var scrollBar: ScrollBar
+    
+    init(scrollBar: ScrollBar) {
+        self.scrollBar = scrollBar
+    }
+}
+class LightWindow: Window { }
+class DarkWindow: Window { }
+
+class Application {
+    var windows = [Window]()
+    
+    func add(_ window: Window) {
+        windows.append(window)
+    }
+}

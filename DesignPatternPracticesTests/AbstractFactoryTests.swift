@@ -48,4 +48,37 @@ class AbstractFactoryTests: XCTestCase {
         }
         XCTAssertTrue(type(of: wall) == BombedWall.self)
     }
+    
+    func testDefaultWidgetFactory() {
+        let application = ThemeManager.initApplication(with: WidgetFactory())
+        XCTAssertEqual(application.windows.count, 1)
+        
+        guard let window = application.windows.first else {
+            fatalError("No windows in application.")
+        }
+        XCTAssertTrue(type(of: window) == Window.self)
+        XCTAssertTrue(type(of: window.scrollBar) == ScrollBar.self)
+    }
+    
+    func testLightWidgetFactory() {
+        let application = ThemeManager.initApplication(with: LightWidgetFactory())
+        XCTAssertEqual(application.windows.count, 1)
+        
+        guard let window = application.windows.first else {
+            fatalError("No windows in application.")
+        }
+        XCTAssertTrue(type(of: window) == LightWindow.self)
+        XCTAssertTrue(type(of: window.scrollBar) == LightScrollBar.self)
+    }
+    
+    func testDarkWidgetFactory() {
+        let application = ThemeManager.initApplication(with: DarkWidgetFactory())
+        XCTAssertEqual(application.windows.count, 1)
+        
+        guard let window = application.windows.first else {
+            fatalError("No windows in application.")
+        }
+        XCTAssertTrue(type(of: window) == DarkWindow.self)
+        XCTAssertTrue(type(of: window.scrollBar) == DarkScrollBar.self)
+    }
 }
