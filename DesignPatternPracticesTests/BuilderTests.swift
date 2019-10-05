@@ -24,4 +24,31 @@ class BuilderTests: XCTestCase {
         XCTAssertEqual(doorsCount, 1)
         XCTAssertEqual(roomsCount, 2)
     }
+
+    private let rtfTokens = [
+        RTFToken(type: .char, char: "a", font: UIFont.systemFont(ofSize: 12)),
+        RTFToken(type: .font, char: "a", font: UIFont.systemFont(ofSize: 12)),
+        RTFToken(type: .paragraph, char: "a", font: UIFont.systemFont(ofSize: 12))
+    ]
+
+    func testASCIIConverter() {
+        let converter = ASCIIConverter()
+        let reader = RTFReader(converter: converter)
+        reader.parseRTF(rtfTokens)
+        XCTAssertEqual(converter.getASCIIText(), "ASCII: a")
+    }
+
+    func testTeXConverter() {
+        let converter = TeXConverter()
+        let reader = RTFReader(converter: converter)
+        reader.parseRTF(rtfTokens)
+        XCTAssertEqual(converter.getTeXText(), "TeX character: a, TeX font changed, TeX paragraph")
+    }
+
+    func testTextWidgetConverter() {
+        let converter = TextWidgetConverter()
+        let reader = RTFReader(converter: converter)
+        reader.parseRTF(rtfTokens)
+        XCTAssertEqual(converter.getTextWidget(), "TextWidget character: a, TextWidget font changed, TextWidget paragraph")
+    }
 }

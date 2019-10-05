@@ -1,5 +1,7 @@
 import Foundation
+import UIKit
 
+// MARK: - Maze Builders
 protocol MazeBuilder {
     func buildMaze()
     func buildRoom(_ roomNo: Int)
@@ -65,5 +67,69 @@ class CountingMazeBuilder: MazeBuilder {
 
     func getCounts() -> (doorsCount: Int, roomsCount: Int) {
         return (doorsCount, roomsCount)
+    }
+}
+
+// MARK: - Text Converters
+protocol TextConverter {
+    func convertCharacter(_ character: Character)
+    func convertFontChange(_ font: UIFont)
+    func convertParagraph()
+}
+
+extension TextConverter {
+    func convertFontChange(_ font: UIFont) {}
+    func convertParagraph() {}
+}
+
+class ASCIIConverter: TextConverter {
+    private var asciiText = [String]()
+
+    func convertCharacter(_ character: Character) {
+        asciiText.append("ASCII: \(character)")
+    }
+
+    func getASCIIText() -> String {
+        return asciiText.joined(separator: ", ")
+    }
+}
+
+class TeXConverter: TextConverter {
+    private var texText = [String]()
+
+    func convertCharacter(_ character: Character) {
+        texText.append("TeX character: \(character)")
+    }
+
+    func convertFontChange(_ font: UIFont) {
+        texText.append("TeX font changed")
+    }
+
+    func convertParagraph() {
+        texText.append("TeX paragraph")
+    }
+
+    func getTeXText() -> String {
+        return texText.joined(separator: ", ")
+    }
+}
+
+class TextWidgetConverter: TextConverter {
+    private var textWidget = [String]()
+
+    func convertCharacter(_ character: Character) {
+        textWidget.append("TextWidget character: \(character)")
+    }
+
+    func convertFontChange(_ font: UIFont) {
+        textWidget.append("TextWidget font changed")
+    }
+
+    func convertParagraph() {
+        textWidget.append("TextWidget paragraph")
+    }
+
+    func getTextWidget() -> String {
+        return textWidget.joined(separator: ", ")
     }
 }
