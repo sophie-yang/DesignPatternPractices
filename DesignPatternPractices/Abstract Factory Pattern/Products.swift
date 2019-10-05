@@ -85,7 +85,7 @@ class Maze {
     }
 }
 
-enum Direction {
+enum Direction: CaseIterable {
     case north
     case south
     case east
@@ -103,7 +103,7 @@ class DarkScrollBar: ScrollBar { }
 
 class Window {
     var scrollBar: ScrollBar
-    
+
     init(scrollBar: ScrollBar) {
         self.scrollBar = scrollBar
     }
@@ -113,7 +113,7 @@ class DarkWindow: Window { }
 
 class Application {
     var windows = [Window]()
-    
+
     func add(_ window: Window) {
         windows.append(window)
     }

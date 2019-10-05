@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - Maze Client
 class MazeGame {
-    public static func createMaze(with factory: MazeFactory) -> Maze {
+    public static func createMaze(withFactory factory: MazeFactory) -> Maze {
         let maze = factory.makeMaze()
         let room1 = factory.makeRoom(1)
         let room2 = factory.makeRoom(2)
@@ -27,7 +27,7 @@ class MazeGame {
 
 // MARK: - Widget Client
 class ThemeManager {
-    public static func initApplication(with factory: WidgetFactory) -> Application {
+    public static func initApplication(withFactory factory: WidgetFactory) -> Application {
         let application = factory.createApplication()
         let scrollBar = factory.createScrollBar()
         let window = factory.createWindow(scrollBar: scrollBar)

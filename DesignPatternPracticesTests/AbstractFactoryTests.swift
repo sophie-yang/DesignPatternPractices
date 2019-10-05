@@ -5,7 +5,7 @@ import Foundation
 class AbstractFactoryTests: XCTestCase {
 
     func testMazeFactory() {
-        let maze = MazeGame.createMaze(with: MazeFactory())
+        let maze = MazeGame.createMaze(withFactory: MazeFactory())
         XCTAssertEqual(maze.rooms.count, 2)
 
         guard let room = maze.rooms.first else {
@@ -20,7 +20,7 @@ class AbstractFactoryTests: XCTestCase {
     }
 
     func testEnchantedFactory() {
-        let maze = MazeGame.createMaze(with: EnchantedMazeFactory())
+        let maze = MazeGame.createMaze(withFactory: EnchantedMazeFactory())
         XCTAssertEqual(maze.rooms.count, 2)
 
         guard let room = maze.rooms.first else {
@@ -35,7 +35,7 @@ class AbstractFactoryTests: XCTestCase {
     }
 
     func testBombedMazeFactory() {
-        let maze = MazeGame.createMaze(with: BombedMazeFactory())
+        let maze = MazeGame.createMaze(withFactory: BombedMazeFactory())
         XCTAssertEqual(maze.rooms.count, 2)
 
         guard let room = maze.rooms.first else {
@@ -48,33 +48,33 @@ class AbstractFactoryTests: XCTestCase {
         }
         XCTAssertTrue(type(of: wall) == BombedWall.self)
     }
-    
+
     func testDefaultWidgetFactory() {
-        let application = ThemeManager.initApplication(with: WidgetFactory())
+        let application = ThemeManager.initApplication(withFactory: WidgetFactory())
         XCTAssertEqual(application.windows.count, 1)
-        
+
         guard let window = application.windows.first else {
             fatalError("No windows in application.")
         }
         XCTAssertTrue(type(of: window) == Window.self)
         XCTAssertTrue(type(of: window.scrollBar) == ScrollBar.self)
     }
-    
+
     func testLightWidgetFactory() {
-        let application = ThemeManager.initApplication(with: LightWidgetFactory())
+        let application = ThemeManager.initApplication(withFactory: LightWidgetFactory())
         XCTAssertEqual(application.windows.count, 1)
-        
+
         guard let window = application.windows.first else {
             fatalError("No windows in application.")
         }
         XCTAssertTrue(type(of: window) == LightWindow.self)
         XCTAssertTrue(type(of: window.scrollBar) == LightScrollBar.self)
     }
-    
+
     func testDarkWidgetFactory() {
-        let application = ThemeManager.initApplication(with: DarkWidgetFactory())
+        let application = ThemeManager.initApplication(withFactory: DarkWidgetFactory())
         XCTAssertEqual(application.windows.count, 1)
-        
+
         guard let window = application.windows.first else {
             fatalError("No windows in application.")
         }
