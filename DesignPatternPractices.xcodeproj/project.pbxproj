@@ -18,6 +18,8 @@
 		10A119CB2325467300F02328 /* AbstractFactoryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A119CA2325467300F02328 /* AbstractFactoryClient.swift */; };
 		319362A92348C70B00F4EE05 /* BuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319362A82348C70B00F4EE05 /* BuilderTests.swift */; };
 		319362AB2348DC0200F4EE05 /* Directors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319362AA2348DC0200F4EE05 /* Directors.swift */; };
+		319362AE234B51FD00F4EE05 /* Creators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319362AD234B51FD00F4EE05 /* Creators.swift */; };
+		319362B0234B53C600F4EE05 /* FactoryMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319362AF234B53C600F4EE05 /* FactoryMethodTests.swift */; };
 		31F84DEF2348C064009CDB53 /* Builders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F84DEE2348C064009CDB53 /* Builders.swift */; };
 		31F84DF12348C33F009CDB53 /* BuilderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F84DF02348C33F009CDB53 /* BuilderClient.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +50,8 @@
 		10A119CA2325467300F02328 /* AbstractFactoryClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractFactoryClient.swift; sourceTree = "<group>"; };
 		319362A82348C70B00F4EE05 /* BuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderTests.swift; sourceTree = "<group>"; };
 		319362AA2348DC0200F4EE05 /* Directors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directors.swift; sourceTree = "<group>"; };
+		319362AD234B51FD00F4EE05 /* Creators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creators.swift; sourceTree = "<group>"; };
+		319362AF234B53C600F4EE05 /* FactoryMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryMethodTests.swift; sourceTree = "<group>"; };
 		31F84DEE2348C064009CDB53 /* Builders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builders.swift; sourceTree = "<group>"; };
 		31F84DF02348C33F009CDB53 /* BuilderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +95,7 @@
 		10A119A12325396B00F02328 /* DesignPatternPractices */ = {
 			isa = PBXGroup;
 			children = (
+				319362AC234B3E5D00F4EE05 /* Factory Method Pattern */,
 				31F84DED2348C039009CDB53 /* Builder Pattern */,
 				10A119C223253A8500F02328 /* Abstract Factory Pattern */,
 				10A119A22325396B00F02328 /* AppDelegate.swift */,
@@ -109,6 +114,7 @@
 				10A119B72325396C00F02328 /* AbstractFactoryTests.swift */,
 				10A119B92325396C00F02328 /* Info.plist */,
 				319362A82348C70B00F4EE05 /* BuilderTests.swift */,
+				319362AF234B53C600F4EE05 /* FactoryMethodTests.swift */,
 			);
 			path = DesignPatternPracticesTests;
 			sourceTree = "<group>";
@@ -121,6 +127,14 @@
 				10A119CA2325467300F02328 /* AbstractFactoryClient.swift */,
 			);
 			path = "Abstract Factory Pattern";
+			sourceTree = "<group>";
+		};
+		319362AC234B3E5D00F4EE05 /* Factory Method Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				319362AD234B51FD00F4EE05 /* Creators.swift */,
+			);
+			path = "Factory Method Pattern";
 			sourceTree = "<group>";
 		};
 		31F84DED2348C039009CDB53 /* Builder Pattern */ = {
@@ -257,6 +271,7 @@
 				10A119A52325396B00F02328 /* ViewController.swift in Sources */,
 				319362AB2348DC0200F4EE05 /* Directors.swift in Sources */,
 				31F84DF12348C33F009CDB53 /* BuilderClient.swift in Sources */,
+				319362AE234B51FD00F4EE05 /* Creators.swift in Sources */,
 				10A119A32325396B00F02328 /* AppDelegate.swift in Sources */,
 				10A119C823253C8500F02328 /* Products.swift in Sources */,
 				10A119CB2325467300F02328 /* AbstractFactoryClient.swift in Sources */,
@@ -270,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10A119B82325396C00F02328 /* AbstractFactoryTests.swift in Sources */,
+				319362B0234B53C600F4EE05 /* FactoryMethodTests.swift in Sources */,
 				319362A92348C70B00F4EE05 /* BuilderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
