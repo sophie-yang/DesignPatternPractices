@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1026686D236F226C003C1C4C /* FactoryMethodProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1026686C236F226C003C1C4C /* FactoryMethodProducts.swift */; };
 		10A119A32325396B00F02328 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A119A22325396B00F02328 /* AppDelegate.swift */; };
 		10A119A52325396B00F02328 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A119A42325396B00F02328 /* ViewController.swift */; };
 		10A119A82325396B00F02328 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A119A62325396B00F02328 /* Main.storyboard */; };
@@ -14,7 +15,7 @@
 		10A119AD2325396C00F02328 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A119AB2325396C00F02328 /* LaunchScreen.storyboard */; };
 		10A119B82325396C00F02328 /* AbstractFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A119B72325396C00F02328 /* AbstractFactoryTests.swift */; };
 		10A119C423253B7A00F02328 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A119C323253B7A00F02328 /* Factories.swift */; };
-		10A119C823253C8500F02328 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A119C723253C8500F02328 /* Products.swift */; };
+		10A119C823253C8500F02328 /* AbstractFactoryProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A119C723253C8500F02328 /* AbstractFactoryProducts.swift */; };
 		10A119CB2325467300F02328 /* AbstractFactoryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A119CA2325467300F02328 /* AbstractFactoryClient.swift */; };
 		319362A92348C70B00F4EE05 /* BuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319362A82348C70B00F4EE05 /* BuilderTests.swift */; };
 		319362AB2348DC0200F4EE05 /* Directors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319362AA2348DC0200F4EE05 /* Directors.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1026686C236F226C003C1C4C /* FactoryMethodProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryMethodProducts.swift; sourceTree = "<group>"; };
 		10A1199F2325396B00F02328 /* DesignPatternPractices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignPatternPractices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A119A22325396B00F02328 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10A119A42325396B00F02328 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +48,7 @@
 		10A119B72325396C00F02328 /* AbstractFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractFactoryTests.swift; sourceTree = "<group>"; };
 		10A119B92325396C00F02328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10A119C323253B7A00F02328 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
-		10A119C723253C8500F02328 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		10A119C723253C8500F02328 /* AbstractFactoryProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractFactoryProducts.swift; sourceTree = "<group>"; };
 		10A119CA2325467300F02328 /* AbstractFactoryClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractFactoryClient.swift; sourceTree = "<group>"; };
 		319362A82348C70B00F4EE05 /* BuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderTests.swift; sourceTree = "<group>"; };
 		319362AA2348DC0200F4EE05 /* Directors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directors.swift; sourceTree = "<group>"; };
@@ -122,7 +124,7 @@
 		10A119C223253A8500F02328 /* Abstract Factory Pattern */ = {
 			isa = PBXGroup;
 			children = (
-				10A119C723253C8500F02328 /* Products.swift */,
+				10A119C723253C8500F02328 /* AbstractFactoryProducts.swift */,
 				10A119C323253B7A00F02328 /* Factories.swift */,
 				10A119CA2325467300F02328 /* AbstractFactoryClient.swift */,
 			);
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				319362AD234B51FD00F4EE05 /* Creators.swift */,
+				1026686C236F226C003C1C4C /* FactoryMethodProducts.swift */,
 			);
 			path = "Factory Method Pattern";
 			sourceTree = "<group>";
@@ -269,11 +272,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				10A119A52325396B00F02328 /* ViewController.swift in Sources */,
+				1026686D236F226C003C1C4C /* FactoryMethodProducts.swift in Sources */,
 				319362AB2348DC0200F4EE05 /* Directors.swift in Sources */,
 				31F84DF12348C33F009CDB53 /* BuilderClient.swift in Sources */,
 				319362AE234B51FD00F4EE05 /* Creators.swift in Sources */,
 				10A119A32325396B00F02328 /* AppDelegate.swift in Sources */,
-				10A119C823253C8500F02328 /* Products.swift in Sources */,
+				10A119C823253C8500F02328 /* AbstractFactoryProducts.swift in Sources */,
 				10A119CB2325467300F02328 /* AbstractFactoryClient.swift in Sources */,
 				10A119C423253B7A00F02328 /* Factories.swift in Sources */,
 				31F84DEF2348C064009CDB53 /* Builders.swift in Sources */,

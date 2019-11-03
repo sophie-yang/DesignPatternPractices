@@ -1,5 +1,6 @@
 import Foundation
 
+// MARK: - Maze creators
 class StandardMazeCreator {
     func createMaze() -> Maze {
         let maze = makeMaze()
@@ -60,3 +61,31 @@ class EnchantedMazeCreator: StandardMazeCreator {
         return DoorNeedingSpell(room1: room1, room2: room2)
     }
 }
+
+// MARK: - Manipulable graphical figure creators
+class Manipulator {
+    var figure: Figure
+    var state: State
+
+    init(figure: Figure) {
+        self.figure = figure
+        self.state = .normal
+    }
+
+    func downClick() { state = .downClick }
+
+    func drag() { state = .drag }
+
+    func upClick() { state = .upClick }
+
+    enum State {
+        case normal
+        case downClick
+        case drag
+        case upClick
+    }
+}
+
+class LineManipulator: Manipulator { }
+
+class TextManipulator: Manipulator { }

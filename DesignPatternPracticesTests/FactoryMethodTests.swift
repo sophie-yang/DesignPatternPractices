@@ -36,4 +36,46 @@ class FactoryMethodTests: XCTestCase {
         XCTAssertTrue(room is EnchantedRoom)
         XCTAssertTrue(room.getSide(.east) is DoorNeedingSpell)
     }
+
+    func testLineFigureManipulator() {
+        let manipulator = LineFigure().createManipulator()
+        XCTAssertTrue(manipulator is LineManipulator)
+        XCTAssertTrue(manipulator.figure is LineFigure)
+
+        manipulator.downClick()
+        guard case .downClick = manipulator.state else {
+            fatalError("State is incorrect.")
+        }
+
+        manipulator.drag()
+        guard case .drag = manipulator.state else {
+            fatalError("State is incorrect.")
+        }
+
+        manipulator.upClick()
+        guard case .upClick = manipulator.state else {
+            fatalError("State is incorrect.")
+        }
+    }
+
+    func testTextFigureManipulator() {
+        let manipulator = TextFigure().createManipulator()
+        XCTAssertTrue(manipulator is TextManipulator)
+        XCTAssertTrue(manipulator.figure is TextFigure)
+
+        manipulator.downClick()
+        guard case .downClick = manipulator.state else {
+            fatalError("State is incorrect.")
+        }
+
+        manipulator.drag()
+        guard case .drag = manipulator.state else {
+            fatalError("State is incorrect.")
+        }
+
+        manipulator.upClick()
+        guard case .upClick = manipulator.state else {
+            fatalError("State is incorrect.")
+        }
+    }
 }
