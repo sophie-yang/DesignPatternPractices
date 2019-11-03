@@ -78,4 +78,32 @@ class FactoryMethodTests: XCTestCase {
             fatalError("State is incorrect.")
         }
     }
+
+    func testParameterizedCreator() {
+        var product = ParameterizedCreator().create(.mine)
+        XCTAssertTrue(product is MyParameterizedProduct)
+
+        product = ParameterizedCreator().create(.yours)
+        XCTAssertTrue(product is YourParameterizedProduct)
+
+        product = ParameterizedCreator().create(.theirs)
+        XCTAssertTrue(product is OtherParameterizedProduct)
+
+        product = ParameterizedCreator().create(.others)
+        XCTAssertTrue(product is OtherParameterizedProduct)
+    }
+
+    func testMyParameterizedCreator() {
+        var product = MyParameterizedCreator().create(.mine)
+        XCTAssertTrue(product is YourParameterizedProduct)
+
+        product = MyParameterizedCreator().create(.yours)
+        XCTAssertTrue(product is MyParameterizedProduct)
+
+        product = MyParameterizedCreator().create(.theirs)
+        XCTAssertTrue(product is TheirParameterizedProduct)
+
+        product = MyParameterizedCreator().create(.others)
+        XCTAssertTrue(product is OtherParameterizedProduct)
+    }
 }

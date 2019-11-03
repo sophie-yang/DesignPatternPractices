@@ -62,7 +62,23 @@ class EnchantedMazeCreator: StandardMazeCreator {
     }
 }
 
-// MARK: - Manipulable graphical figure creators
+// MARK: - Example for parallel class hierarchies
+protocol Figure {
+    func createManipulator() -> Manipulator
+}
+
+class LineFigure: Figure {
+    func createManipulator() -> Manipulator {
+        return LineManipulator(figure: self)
+    }
+}
+
+class TextFigure: Figure {
+    func createManipulator() -> Manipulator {
+        return TextManipulator(figure: self)
+    }
+}
+
 class Manipulator {
     var figure: Figure
     var state: State
@@ -89,3 +105,39 @@ class Manipulator {
 class LineManipulator: Manipulator { }
 
 class TextManipulator: Manipulator { }
+
+// MARK: - Parameterized factory methods
+protocol ParameterizedProduct { }
+class MyParameterizedProduct: ParameterizedProduct { }
+class YourParameterizedProduct: ParameterizedProduct { }
+class TheirParameterizedProduct: ParameterizedProduct { }
+class OtherParameterizedProduct: ParameterizedProduct { }
+
+class ParameterizedCreator {
+    func create(_ productType: ProductType) -> ParameterizedProduct {
+        switch productType {
+        case .mine: return MyParameterizedProduct()
+        case .yours: return YourParameterizedProduct()
+        default: return OtherParameterizedProduct()
+        }
+    }
+
+    enum ProductType {
+        case mine
+        case yours
+        case theirs
+        case others
+    }
+}
+
+class MyParameterizedCreator: ParameterizedCreator {
+    override func create(_ productType: ParameterizedCreator.ProductType) -> ParameterizedProduct {
+        switch productType {
+        case .mine: return YourParameterizedProduct()
+        case .yours: return MyParameterizedProduct()
+        case .theirs: return TheirParameterizedProduct()
+        default: break
+        }
+        return super.create(productType)
+    }
+}
