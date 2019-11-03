@@ -11,17 +11,8 @@ class FactoryMethodTests: XCTestCase {
         guard let room = maze.rooms.first else {
             fatalError("No rooms in maze.")
         }
-        XCTAssertTrue(type(of: room) == Room.self)
-
-        guard let door = room.getSide(.east) as? Door else {
-            fatalError("The east side doesn’t has a door.")
-        }
-        XCTAssertTrue(type(of: door) == Door.self)
-
-        guard let wall = room.getSide(.west) as? Wall else {
-            fatalError("The east side doesn’t has a door.")
-        }
-        XCTAssertTrue(type(of: wall) == Wall.self)
+        XCTAssertTrue(room.getSide(.east) is Door)
+        XCTAssertTrue(room.getSide(.west) is Wall)
     }
 
     func testBombedMazeCreator() {
@@ -31,12 +22,8 @@ class FactoryMethodTests: XCTestCase {
         guard let room = maze.rooms.first else {
             fatalError("No rooms in maze.")
         }
-        XCTAssertTrue(type(of: room) == RoomWithABomb.self)
-
-        guard let wall = room.getSide(.west) as? Wall else {
-            fatalError("The east side doesn’t has a door.")
-        }
-        XCTAssertTrue(type(of: wall) == BombedWall.self)
+        XCTAssertTrue(room is RoomWithABomb)
+        XCTAssertTrue(room.getSide(.west) is BombedWall)
     }
 
     func testEnchantedMazeCreator() {
@@ -46,11 +33,7 @@ class FactoryMethodTests: XCTestCase {
         guard let room = maze.rooms.first else {
             fatalError("No rooms in maze.")
         }
-        XCTAssertTrue(type(of: room) == EnchantedRoom.self)
-
-        guard let door = room.getSide(.east) as? Door else {
-            fatalError("The east side doesn’t has a door.")
-        }
-        XCTAssertTrue(type(of: door) == DoorNeedingSpell.self)
+        XCTAssertTrue(room is EnchantedRoom)
+        XCTAssertTrue(room.getSide(.east) is DoorNeedingSpell)
     }
 }

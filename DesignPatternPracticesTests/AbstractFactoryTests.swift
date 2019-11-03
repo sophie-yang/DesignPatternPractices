@@ -11,12 +11,7 @@ class AbstractFactoryTests: XCTestCase {
         guard let room = maze.rooms.first else {
             fatalError("No rooms in maze.")
         }
-        XCTAssertTrue(type(of: room) == Room.self)
-
-        guard let door = room.getSide(.east) as? Door else {
-            fatalError("The east side doesn’t has a door.")
-        }
-        XCTAssertTrue(type(of: door) == Door.self)
+        XCTAssertTrue(room.getSide(.east) is Door)
     }
 
     func testEnchantedFactory() {
@@ -26,12 +21,8 @@ class AbstractFactoryTests: XCTestCase {
         guard let room = maze.rooms.first else {
             fatalError("No rooms in maze.")
         }
-        XCTAssertTrue(type(of: room) == EnchantedRoom.self)
-
-        guard let door = room.getSide(.east) as? Door else {
-            fatalError("The east side doesn’t has a door.")
-        }
-        XCTAssertTrue(type(of: door) == DoorNeedingSpell.self)
+        XCTAssertTrue(room is EnchantedRoom)
+        XCTAssertTrue(room.getSide(.east) is DoorNeedingSpell)
     }
 
     func testBombedMazeFactory() {
@@ -41,23 +32,8 @@ class AbstractFactoryTests: XCTestCase {
         guard let room = maze.rooms.first else {
             fatalError("No rooms in maze.")
         }
-        XCTAssertTrue(type(of: room) == RoomWithABomb.self)
-
-        guard let wall = room.getSide(.north) as? Wall else {
-            fatalError("The east side doesn’t has a wall.")
-        }
-        XCTAssertTrue(type(of: wall) == BombedWall.self)
-    }
-
-    func testDefaultWidgetFactory() {
-        let application = ThemeManager.initApplication(withFactory: WidgetFactory())
-        XCTAssertEqual(application.windows.count, 1)
-
-        guard let window = application.windows.first else {
-            fatalError("No windows in application.")
-        }
-        XCTAssertTrue(type(of: window) == Window.self)
-        XCTAssertTrue(type(of: window.scrollBar) == ScrollBar.self)
+        XCTAssertTrue(room is RoomWithABomb)
+        XCTAssertTrue(room.getSide(.north) is BombedWall)
     }
 
     func testLightWidgetFactory() {
@@ -67,8 +43,8 @@ class AbstractFactoryTests: XCTestCase {
         guard let window = application.windows.first else {
             fatalError("No windows in application.")
         }
-        XCTAssertTrue(type(of: window) == LightWindow.self)
-        XCTAssertTrue(type(of: window.scrollBar) == LightScrollBar.self)
+        XCTAssertTrue(window is LightWindow)
+        XCTAssertTrue(window.scrollBar is LightScrollBar)
     }
 
     func testDarkWidgetFactory() {
@@ -78,7 +54,7 @@ class AbstractFactoryTests: XCTestCase {
         guard let window = application.windows.first else {
             fatalError("No windows in application.")
         }
-        XCTAssertTrue(type(of: window) == DarkWindow.self)
-        XCTAssertTrue(type(of: window.scrollBar) == DarkScrollBar.self)
+        XCTAssertTrue(window is DarkWindow)
+        XCTAssertTrue(window.scrollBar is DarkScrollBar)
     }
 }

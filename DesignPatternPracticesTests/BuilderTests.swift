@@ -13,7 +13,6 @@ class BuilderTests: XCTestCase {
         guard let room = maze.rooms.first else {
             fatalError("No rooms in maze.")
         }
-        XCTAssertTrue(type(of: room) == Room.self)
         XCTAssertTrue(room.sides.values.contains(where: { type(of: $0) == Door.self }))
     }
 
