@@ -6,20 +6,26 @@ protocol MapSite {
 }
 
 // MARK: Walls
-class Wall: MapSite {
+class Wall: MapSite, Copyable {
+    required init() { }
+
     func enter() {
         print(failureMessage)
+    }
+
+    func copy() -> Self {
+        return type(of: self).init()
     }
 }
 
 class BombedWall: Wall { }
 
 // MARK: Rooms
-class Room: MapSite {
-    let roomNo: Int
+class Room: MapSite, Copyable {
+    var roomNo: Int
     var sides = [Direction: MapSite]()
 
-    init(_ roomNo: Int) {
+    required init(_ roomNo: Int = 0) {
         self.roomNo = roomNo
     }
 
@@ -34,29 +40,42 @@ class Room: MapSite {
     func setSide(direction: Direction, site: MapSite) {
         sides[direction] = site
     }
+
     func getSide(_ direction: Direction) -> MapSite? {
         return sides[direction]
+    }
+
+    func copy() -> Self {
+        return type(of: self).init(roomNo)
     }
 }
 
 class EnchantedRoom: Room {
-    let spell: String   // same as a password
+    var spell: String   // same as a password
 
-    init(_ roomNo: Int, spell: String) {
+    required init(_ roomNo: Int = 0, spell: String = "") {
         self.spell = spell
         super.init(roomNo)
+    }
+
+    required init(_ roomNo: Int) {
+        fatalError("init(_:) has not been implemented")
+    }
+
+    override func copy() -> Self {
+        return type(of: self).init(roomNo, spell: spell)
     }
 }
 
 class RoomWithABomb: Room { }
 
 // MARK: Doors
-class Door: MapSite {
-    let room1: Room
-    let room2: Room
+class Door: MapSite, Copyable {
+    var room1: Room
+    var room2: Room
     var isOpen: Bool = false
 
-    init(room1: Room, room2: Room) {
+    required init(room1: Room = Room(), room2: Room = Room()) {
         self.room1 = room1
         self.room2 = room2
     }
@@ -68,13 +87,19 @@ class Door: MapSite {
     func otherSide(from room: Room) -> Room {
         return room == room1 ? room2 : room1
     }
+
+    func copy() -> Self {
+        return type(of: self).init(room1: room1, room2: room2)
+    }
 }
 
 class DoorNeedingSpell: Door { }
 
 // MARK: Maze
-class Maze {
+class Maze: Copyable {
     var rooms = [Room]()
+
+    required init() { }
 
     func add(_ room: Room) {
         rooms.append(room)
@@ -82,6 +107,10 @@ class Maze {
 
     func getRoom(by roomNo: Int) -> Room? {
         return rooms.first { $0.roomNo == roomNo }
+    }
+
+    func copy() -> Self {
+        return type(of: self).init()
     }
 }
 
