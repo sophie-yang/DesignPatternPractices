@@ -11,6 +11,8 @@
 		10019AB62371251000EDB626 /* PrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10019AB52371251000EDB626 /* PrototypeTests.swift */; };
 		103AACD22381623200C9249E /* Singletons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103AACD12381623200C9249E /* Singletons.swift */; };
 		103AACD42381638D00C9249E /* SingletonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103AACD32381638D00C9249E /* SingletonTests.swift */; };
+		103AACD62381903A00C9249E /* Multitons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103AACD52381903A00C9249E /* Multitons.swift */; };
+		103AACD82381973900C9249E /* MultitonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103AACD72381973900C9249E /* MultitonTests.swift */; };
 		10A119A32325396B00F02328 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A119A22325396B00F02328 /* AppDelegate.swift */; };
 		10A119A52325396B00F02328 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A119A42325396B00F02328 /* ViewController.swift */; };
 		10A119A82325396B00F02328 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A119A62325396B00F02328 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 		10019AB52371251000EDB626 /* PrototypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeTests.swift; sourceTree = "<group>"; };
 		103AACD12381623200C9249E /* Singletons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singletons.swift; sourceTree = "<group>"; };
 		103AACD32381638D00C9249E /* SingletonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonTests.swift; sourceTree = "<group>"; };
+		103AACD52381903A00C9249E /* Multitons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multitons.swift; sourceTree = "<group>"; };
+		103AACD72381973900C9249E /* MultitonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultitonTests.swift; sourceTree = "<group>"; };
 		10A1199F2325396B00F02328 /* DesignPatternPractices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignPatternPractices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A119A22325396B00F02328 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10A119A42325396B00F02328 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				103AACD12381623200C9249E /* Singletons.swift */,
+				103AACD52381903A00C9249E /* Multitons.swift */,
 			);
 			path = "Singleton Pattern";
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 				319362AF234B53C600F4EE05 /* FactoryMethodTests.swift */,
 				10019AB52371251000EDB626 /* PrototypeTests.swift */,
 				103AACD32381638D00C9249E /* SingletonTests.swift */,
+				103AACD72381973900C9249E /* MultitonTests.swift */,
 			);
 			path = DesignPatternPracticesTests;
 			sourceTree = "<group>";
@@ -301,6 +307,7 @@
 				31F84DF12348C33F009CDB53 /* BuilderClients.swift in Sources */,
 				319362AE234B51FD00F4EE05 /* Creators.swift in Sources */,
 				10019AB223710E3200EDB626 /* Prototypes.swift in Sources */,
+				103AACD62381903A00C9249E /* Multitons.swift in Sources */,
 				10A119A32325396B00F02328 /* AppDelegate.swift in Sources */,
 				103AACD22381623200C9249E /* Singletons.swift in Sources */,
 				10A119C823253C8500F02328 /* AbstractFactoryProducts.swift in Sources */,
@@ -317,6 +324,7 @@
 				10019AB62371251000EDB626 /* PrototypeTests.swift in Sources */,
 				10A119B82325396C00F02328 /* AbstractFactoryTests.swift in Sources */,
 				103AACD42381638D00C9249E /* SingletonTests.swift in Sources */,
+				103AACD82381973900C9249E /* MultitonTests.swift in Sources */,
 				319362B0234B53C600F4EE05 /* FactoryMethodTests.swift in Sources */,
 				319362A92348C70B00F4EE05 /* BuilderTests.swift in Sources */,
 			);
