@@ -26,7 +26,7 @@ class MazeGame {
 }
 
 // MARK: - Widget Client
-class ThemeManager {
+class Launcher {
     public static func initApplication(withFactory factory: WidgetFactory) -> Application {
         let application = factory.createApplication()
         let scrollBar = factory.createScrollBar()

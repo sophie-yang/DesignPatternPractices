@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		10019AB223710E3200EDB626 /* Prototypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10019AB123710E3200EDB626 /* Prototypes.swift */; };
 		10019AB62371251000EDB626 /* PrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10019AB52371251000EDB626 /* PrototypeTests.swift */; };
+		103AACD22381623200C9249E /* Singletons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103AACD12381623200C9249E /* Singletons.swift */; };
+		103AACD42381638D00C9249E /* SingletonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103AACD32381638D00C9249E /* SingletonTests.swift */; };
 		10A119A32325396B00F02328 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A119A22325396B00F02328 /* AppDelegate.swift */; };
 		10A119A52325396B00F02328 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A119A42325396B00F02328 /* ViewController.swift */; };
 		10A119A82325396B00F02328 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A119A62325396B00F02328 /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		10019AB123710E3200EDB626 /* Prototypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prototypes.swift; sourceTree = "<group>"; };
 		10019AB52371251000EDB626 /* PrototypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeTests.swift; sourceTree = "<group>"; };
+		103AACD12381623200C9249E /* Singletons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singletons.swift; sourceTree = "<group>"; };
+		103AACD32381638D00C9249E /* SingletonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonTests.swift; sourceTree = "<group>"; };
 		10A1199F2325396B00F02328 /* DesignPatternPractices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignPatternPractices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A119A22325396B00F02328 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10A119A42325396B00F02328 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +90,14 @@
 			path = "Prototype Pattern";
 			sourceTree = "<group>";
 		};
+		103AACD02381620E00C9249E /* Singleton Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				103AACD12381623200C9249E /* Singletons.swift */,
+			);
+			path = "Singleton Pattern";
+			sourceTree = "<group>";
+		};
 		10A119962325396B00F02328 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +119,7 @@
 		10A119A12325396B00F02328 /* DesignPatternPractices */ = {
 			isa = PBXGroup;
 			children = (
+				103AACD02381620E00C9249E /* Singleton Pattern */,
 				10019AB023710DD600EDB626 /* Prototype Pattern */,
 				319362AC234B3E5D00F4EE05 /* Factory Method Pattern */,
 				31F84DED2348C039009CDB53 /* Builder Pattern */,
@@ -129,6 +142,7 @@
 				319362A82348C70B00F4EE05 /* BuilderTests.swift */,
 				319362AF234B53C600F4EE05 /* FactoryMethodTests.swift */,
 				10019AB52371251000EDB626 /* PrototypeTests.swift */,
+				103AACD32381638D00C9249E /* SingletonTests.swift */,
 			);
 			path = DesignPatternPracticesTests;
 			sourceTree = "<group>";
@@ -288,6 +302,7 @@
 				319362AE234B51FD00F4EE05 /* Creators.swift in Sources */,
 				10019AB223710E3200EDB626 /* Prototypes.swift in Sources */,
 				10A119A32325396B00F02328 /* AppDelegate.swift in Sources */,
+				103AACD22381623200C9249E /* Singletons.swift in Sources */,
 				10A119C823253C8500F02328 /* AbstractFactoryProducts.swift in Sources */,
 				10A119CB2325467300F02328 /* AbstractFactoryClients.swift in Sources */,
 				10A119C423253B7A00F02328 /* Factories.swift in Sources */,
@@ -301,6 +316,7 @@
 			files = (
 				10019AB62371251000EDB626 /* PrototypeTests.swift in Sources */,
 				10A119B82325396C00F02328 /* AbstractFactoryTests.swift in Sources */,
+				103AACD42381638D00C9249E /* SingletonTests.swift in Sources */,
 				319362B0234B53C600F4EE05 /* FactoryMethodTests.swift in Sources */,
 				319362A92348C70B00F4EE05 /* BuilderTests.swift in Sources */,
 			);
