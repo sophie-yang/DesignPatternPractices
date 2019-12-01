@@ -65,3 +65,25 @@ class WindowSystemFactoryManager {
         case pm
     }
 }
+
+class DeviceImplementorManager {
+    static let shared = DeviceImplementorManager()
+
+    private(set) var imp = ImageImp()
+
+    private init() { }
+
+    func setDeviceType(_ device: DeviceType) {
+        switch device {
+        case .iphone: imp = IPhoneImageImp()
+        case .ipad: imp = IPadImageImp()
+        default: imp = ImageImp()
+        }
+    }
+
+    enum DeviceType: Int {
+        case `defalut`
+        case iphone
+        case ipad
+    }
+}

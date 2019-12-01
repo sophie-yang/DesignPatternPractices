@@ -1,5 +1,6 @@
 import UIKit
 
+// MARK: - Window System
 class BridgeWindow {
     private let contents: UIView
     private var imp: BridgeWindowImp?
@@ -50,4 +51,21 @@ class IconBridgeWindow: BridgeWindow {
         guard let imp = windowImp else { return }
         imp.deviceBitmap(bitmapName, origin: .zero)
     }
+}
+
+// MARK: - Image
+class Image {
+    var imageImp: ImageImp? {
+        return DeviceImplementorManager.shared.imp
+    }
+
+    var colors: [UIColor] { return [] }
+}
+
+class BlackWhiteImage: Image {
+    override var colors: [UIColor] { return [.black, .white] }
+}
+
+class ColorfulImage: Image {
+    override var colors: [UIColor] { return [.red, .green, .blue] }
 }
