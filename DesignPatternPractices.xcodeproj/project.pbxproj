@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		10019AB223710E3200EDB626 /* Prototypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10019AB123710E3200EDB626 /* Prototypes.swift */; };
 		10019AB62371251000EDB626 /* PrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10019AB52371251000EDB626 /* PrototypeTests.swift */; };
+		101061412392903200684B9D /* Abstractions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101061402392903200684B9D /* Abstractions.swift */; };
+		101061432392908200684B9D /* Implementors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101061422392908200684B9D /* Implementors.swift */; };
+		101061452393F0AE00684B9D /* BridgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101061442393F0AE00684B9D /* BridgeTests.swift */; };
 		103AACD22381623200C9249E /* Singletons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103AACD12381623200C9249E /* Singletons.swift */; };
 		103AACD42381638D00C9249E /* SingletonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103AACD32381638D00C9249E /* SingletonTests.swift */; };
 		103AACD62381903A00C9249E /* Multitons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103AACD52381903A00C9249E /* Multitons.swift */; };
@@ -47,6 +50,9 @@
 /* Begin PBXFileReference section */
 		10019AB123710E3200EDB626 /* Prototypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prototypes.swift; sourceTree = "<group>"; };
 		10019AB52371251000EDB626 /* PrototypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeTests.swift; sourceTree = "<group>"; };
+		101061402392903200684B9D /* Abstractions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Abstractions.swift; sourceTree = "<group>"; };
+		101061422392908200684B9D /* Implementors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Implementors.swift; sourceTree = "<group>"; };
+		101061442393F0AE00684B9D /* BridgeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeTests.swift; sourceTree = "<group>"; };
 		103AACD12381623200C9249E /* Singletons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singletons.swift; sourceTree = "<group>"; };
 		103AACD32381638D00C9249E /* SingletonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonTests.swift; sourceTree = "<group>"; };
 		103AACD52381903A00C9249E /* Multitons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multitons.swift; sourceTree = "<group>"; };
@@ -102,6 +108,15 @@
 			path = "Prototype Pattern";
 			sourceTree = "<group>";
 		};
+		1010613F239288DD00684B9D /* Bridge Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				101061402392903200684B9D /* Abstractions.swift */,
+				101061422392908200684B9D /* Implementors.swift */,
+			);
+			path = "Bridge Pattern";
+			sourceTree = "<group>";
+		};
 		103AACD02381620E00C9249E /* Singleton Pattern */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +147,7 @@
 		10A119A12325396B00F02328 /* DesignPatternPractices */ = {
 			isa = PBXGroup;
 			children = (
+				1010613F239288DD00684B9D /* Bridge Pattern */,
 				3188B1782382EF9C0025DDEF /* Adapter Pattern */,
 				103AACD02381620E00C9249E /* Singleton Pattern */,
 				10019AB023710DD600EDB626 /* Prototype Pattern */,
@@ -159,6 +175,7 @@
 				103AACD32381638D00C9249E /* SingletonTests.swift */,
 				103AACD72381973900C9249E /* MultitonTests.swift */,
 				3188B1812382FA560025DDEF /* AdapterTests.swift */,
+				101061442393F0AE00684B9D /* BridgeTests.swift */,
 			);
 			path = DesignPatternPracticesTests;
 			sourceTree = "<group>";
@@ -325,6 +342,7 @@
 				10A119A52325396B00F02328 /* ViewController.swift in Sources */,
 				319362AB2348DC0200F4EE05 /* Directors.swift in Sources */,
 				31F84DF12348C33F009CDB53 /* BuilderClients.swift in Sources */,
+				101061432392908200684B9D /* Implementors.swift in Sources */,
 				319362AE234B51FD00F4EE05 /* Creators.swift in Sources */,
 				10019AB223710E3200EDB626 /* Prototypes.swift in Sources */,
 				3188B17A2382EFC80025DDEF /* Targets.swift in Sources */,
@@ -332,6 +350,7 @@
 				10A119A32325396B00F02328 /* AppDelegate.swift in Sources */,
 				3188B1802382F0040025DDEF /* Adapter.swift in Sources */,
 				103AACD22381623200C9249E /* Singletons.swift in Sources */,
+				101061412392903200684B9D /* Abstractions.swift in Sources */,
 				10A119C823253C8500F02328 /* AbstractFactoryProducts.swift in Sources */,
 				10A119CB2325467300F02328 /* AbstractFactoryClients.swift in Sources */,
 				10A119C423253B7A00F02328 /* Factories.swift in Sources */,
@@ -348,6 +367,7 @@
 				10A119B82325396C00F02328 /* AbstractFactoryTests.swift in Sources */,
 				3188B1822382FA560025DDEF /* AdapterTests.swift in Sources */,
 				103AACD42381638D00C9249E /* SingletonTests.swift in Sources */,
+				101061452393F0AE00684B9D /* BridgeTests.swift in Sources */,
 				103AACD82381973900C9249E /* MultitonTests.swift in Sources */,
 				319362B0234B53C600F4EE05 /* FactoryMethodTests.swift in Sources */,
 				319362A92348C70B00F4EE05 /* BuilderTests.swift in Sources */,

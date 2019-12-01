@@ -73,3 +73,22 @@ class DarkWidgetFactory: WidgetFactory {
         return DarkWindow(scrollBar: scrollBar)
     }
 }
+
+// MARK: - Window System Factories
+class WindowSystemFactory {
+    func makeWindowImp() -> BridgeWindowImp {
+        return BridgeWindowImp()
+    }
+}
+
+class XBridgeWindowSystemFactory: WindowSystemFactory {
+    override func makeWindowImp() -> XBridgeWindowImp {
+        return XBridgeWindowImp()
+    }
+}
+
+class PMBridgeWindowSystemFactory: WindowSystemFactory {
+    override func makeWindowImp() -> PMBridgeWindowImp {
+        return PMBridgeWindowImp()
+    }
+}

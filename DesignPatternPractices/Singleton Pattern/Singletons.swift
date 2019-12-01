@@ -43,3 +43,25 @@ class ThemeManager {
         case dark
     }
 }
+
+class WindowSystemFactoryManager {
+    static let shared = WindowSystemFactoryManager()
+
+    private(set) var factory = WindowSystemFactory()
+
+    private init() { }
+
+    func setWindowSystem(_ system: WindowSystem) {
+        switch system {
+        case .x: factory = XBridgeWindowSystemFactory()
+        case .pm: factory = PMBridgeWindowSystemFactory()
+        default: factory = WindowSystemFactory()
+        }
+    }
+
+    enum WindowSystem: Int {
+        case `defalut`
+        case x
+        case pm
+    }
+}
