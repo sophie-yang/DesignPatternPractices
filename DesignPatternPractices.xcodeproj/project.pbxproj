@@ -46,6 +46,10 @@
 		319362AB2348DC0200F4EE05 /* Directors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319362AA2348DC0200F4EE05 /* Directors.swift */; };
 		319362AE234B51FD00F4EE05 /* Creators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319362AD234B51FD00F4EE05 /* Creators.swift */; };
 		319362B0234B53C600F4EE05 /* FactoryMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319362AF234B53C600F4EE05 /* FactoryMethodTests.swift */; };
+		31B34D2223C37FB300CAC358 /* Proxies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B34D2123C37FB300CAC358 /* Proxies.swift */; };
+		31B34D2423C392B300CAC358 /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B34D2323C392B300CAC358 /* Subjects.swift */; };
+		31B34D2623C394B100CAC358 /* ProxyClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B34D2523C394B100CAC358 /* ProxyClients.swift */; };
+		31B34D2823C3956900CAC358 /* ProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B34D2723C3956900CAC358 /* ProxyTests.swift */; };
 		31F84DEF2348C064009CDB53 /* Builders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F84DEE2348C064009CDB53 /* Builders.swift */; };
 		31F84DF12348C33F009CDB53 /* BuilderClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F84DF02348C33F009CDB53 /* BuilderClients.swift */; };
 /* End PBXBuildFile section */
@@ -104,6 +108,10 @@
 		319362AA2348DC0200F4EE05 /* Directors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directors.swift; sourceTree = "<group>"; };
 		319362AD234B51FD00F4EE05 /* Creators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creators.swift; sourceTree = "<group>"; };
 		319362AF234B53C600F4EE05 /* FactoryMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryMethodTests.swift; sourceTree = "<group>"; };
+		31B34D2123C37FB300CAC358 /* Proxies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proxies.swift; sourceTree = "<group>"; };
+		31B34D2323C392B300CAC358 /* Subjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
+		31B34D2523C394B100CAC358 /* ProxyClients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyClients.swift; sourceTree = "<group>"; };
+		31B34D2723C3956900CAC358 /* ProxyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyTests.swift; sourceTree = "<group>"; };
 		31F84DEE2348C064009CDB53 /* Builders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builders.swift; sourceTree = "<group>"; };
 		31F84DF02348C33F009CDB53 /* BuilderClients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderClients.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +218,7 @@
 		10A119A12325396B00F02328 /* DesignPatternPractices */ = {
 			isa = PBXGroup;
 			children = (
+				31B34D2023C37F9200CAC358 /* Proxy Pattern */,
 				10A0E9EF23C1F08D002682BD /* Flyweight Pattern */,
 				1077B09623A6830100F5B517 /* Facade Pattern */,
 				1077B08F23A617CD00F5B517 /* Decorator Pattern */,
@@ -247,6 +256,7 @@
 				1077B09423A61F2200F5B517 /* DecoratorTests.swift */,
 				1077B09B23A6947B00F5B517 /* FacadeTests.swift */,
 				10A0E9F223C218AB002682BD /* FlyweightTests.swift */,
+				31B34D2723C3956900CAC358 /* ProxyTests.swift */,
 			);
 			path = DesignPatternPracticesTests;
 			sourceTree = "<group>";
@@ -277,6 +287,16 @@
 				319362AD234B51FD00F4EE05 /* Creators.swift */,
 			);
 			path = "Factory Method Pattern";
+			sourceTree = "<group>";
+		};
+		31B34D2023C37F9200CAC358 /* Proxy Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				31B34D2123C37FB300CAC358 /* Proxies.swift */,
+				31B34D2323C392B300CAC358 /* Subjects.swift */,
+				31B34D2523C394B100CAC358 /* ProxyClients.swift */,
+			);
+			path = "Proxy Pattern";
 			sourceTree = "<group>";
 		};
 		31F84DED2348C039009CDB53 /* Builder Pattern */ = {
@@ -410,9 +430,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31B34D2423C392B300CAC358 /* Subjects.swift in Sources */,
 				10A119A52325396B00F02328 /* ViewController.swift in Sources */,
 				1077B09823A6832700F5B517 /* SubsystemClasses.swift in Sources */,
 				319362AB2348DC0200F4EE05 /* Directors.swift in Sources */,
+				31B34D2223C37FB300CAC358 /* Proxies.swift in Sources */,
 				31F84DF12348C33F009CDB53 /* BuilderClients.swift in Sources */,
 				101061432392908200684B9D /* Implementors.swift in Sources */,
 				319362AE234B51FD00F4EE05 /* Creators.swift in Sources */,
@@ -421,6 +443,7 @@
 				10A0E9F523C22675002682BD /* FlyweightFactories.swift in Sources */,
 				101061482393FDC300684B9D /* Components.swift in Sources */,
 				103AACD62381903A00C9249E /* Multitons.swift in Sources */,
+				31B34D2623C394B100CAC358 /* ProxyClients.swift in Sources */,
 				1077B09323A618B400F5B517 /* Decorators.swift in Sources */,
 				10A119A32325396B00F02328 /* AppDelegate.swift in Sources */,
 				3188B1802382F0040025DDEF /* Adapter.swift in Sources */,
@@ -447,6 +470,7 @@
 				10019AB62371251000EDB626 /* PrototypeTests.swift in Sources */,
 				10A119B82325396C00F02328 /* AbstractFactoryTests.swift in Sources */,
 				3188B1822382FA560025DDEF /* AdapterTests.swift in Sources */,
+				31B34D2823C3956900CAC358 /* ProxyTests.swift in Sources */,
 				103AACD42381638D00C9249E /* SingletonTests.swift in Sources */,
 				101061452393F0AE00684B9D /* BridgeTests.swift in Sources */,
 				1077B09C23A6947B00F5B517 /* FacadeTests.swift in Sources */,
